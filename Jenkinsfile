@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'docker build -t hello-php .',
-                sh 'docker run -p 3000:8081 -d hello-php',
-                sh 'php --version'
+                ssh -i ../clave.pem  ubuntu@ec2-54-86-55-166.compute-1.amazonaws.com 'docker build -t hello-php .',
+                ssh -i ../clave.pem  ubuntu@ec2-54-86-55-166.compute-1.amazonaws.com 'docker run -p 3000:8081 -d hello-php',
+                ssh -i ../clave.pem  ubuntu@ec2-54-86-55-166.compute-1.amazonaws.com 'php --version'
             }
         }
     }
