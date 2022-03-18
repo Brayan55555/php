@@ -1,13 +1,8 @@
-#!groovy
+node('docker') {
 
-node {
-   // ------------------------------------
-   // -- ETAPA: Compilar
-   // ------------------------------------
-   stage 'Docker'
-   
-   // -- Descarga código desde SCM
-   echo 'Validar version'
-   sh 'ls -la'
-   sh 'docker-compose --version'
+    stage 'Checkout'
+        checkout scm
+    stage 'Build & UnitTest'
+        sh "docker-compose --version"
+
 }
