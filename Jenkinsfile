@@ -9,5 +9,5 @@ node {
    // -- Descarga código desde SCM
    echo 'Validar version'
    sh 'pwd'
-   sh 'docker-compose --version'
+   sh "ssh -i ../clave.pem  ubuntu@ec2-54-86-55-166.compute-1.amazonaws.com 'pwd'"
 }
