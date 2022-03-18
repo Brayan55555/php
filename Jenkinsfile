@@ -11,5 +11,5 @@ node {
    sh 'pwd'
    sh "ssh -i ../clave.pem  ubuntu@ec2-54-86-55-166.compute-1.amazonaws.com 'pwd'"
    sh "ssh -i ../clave.pem  ubuntu@ec2-54-86-55-166.compute-1.amazonaws.com 'sudo docker build -t hello-php php/.'"
-   sh "ssh -i ../clave.pem  ubuntu@ec2-54-86-55-166.compute-1.amazonaws.com 'sudo docker run -p 3000:80 -d hello-php'"
+   sh "ssh -i ../clave.pem  ubuntu@ec2-54-86-55-166.compute-1.amazonaws.com 'sudo docker run -p 8081:80 -d hello-php'"
 }
