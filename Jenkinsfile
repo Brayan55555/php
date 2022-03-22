@@ -5,7 +5,7 @@ pipeline {
         stage('checkout from gitlab') {
             steps {
                 git branch: 'master',
-		        credentialsId: 'gitab-darboleda',
+		        credentialsId: 'php',
 		        url: 'https://github.com/Brayan55555/php.git'
             }
         }
@@ -16,7 +16,7 @@ pipeline {
                     def scannerHome = tool 'sonarqube';  //global tool configuration http://172.17.0.1:8080/configureTools/
         			   withSonarQubeEnv("Sonarqube-container") { //sonarqube server http://172.17.0.1:8080/configure
         			   sh "${tool("sonarqube")}/bin/sonar-scanner \
-        							-Dsonar.projectKey=lumen-ci \
+        							-Dsonar.projectKey=php \
                                     -Dsonar.sources=. \
                                     -Dsonar.language=php \
 									-Dsonar.exclusions=vendor \
