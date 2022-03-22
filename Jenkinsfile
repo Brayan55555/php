@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     def scannerHome = tool 'sonarqube';  //global tool configuration http://172.17.0.1:8080/configureTools/
-        			   withSonarQubeEnv("Sonarqube-container") { //sonarqube server http://172.17.0.1:8080/configure
+        			   withSonarQubeEnv("sonarqube-container") { //sonarqube server http://172.17.0.1:8080/configure
         			   sh "${tool("sonarqube")}/bin/sonar-scanner \
         							-Dsonar.projectKey=php \
                                     -Dsonar.sources=. \
